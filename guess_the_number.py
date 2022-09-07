@@ -18,11 +18,15 @@ def generate_secret(low, high):
 
 def get_guess():
     """ get user's guess, as an integer number """
-    return int(input('Guess the secret number? '))
+    return int(input('Guess the secret number? '))  #comments are fun
 
 
 def check_guess(guess, secret):
     """ compare guess and secret, return string describing result of comparison """
+    #checks to see if the guess is too high or too low or correct. 
+    #count = 0
+    #for x in guess():
+    
     if guess == secret:
         return correct
     if guess < secret:
