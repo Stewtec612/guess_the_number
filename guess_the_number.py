@@ -1,4 +1,5 @@
 
+from itertools import count
 import random
 
 correct = 'you guessed correctly!'
@@ -24,15 +25,17 @@ def get_guess():
 def check_guess(guess, secret):
     """ compare guess and secret, return string describing result of comparison """
     #checks to see if the guess is too high or too low or correct. 
-    #count = 0
-    #for x in guess():
-    
+    count = 0  #initialize counter
     if guess == secret:
+        count =+ 1
+        print('')
         return correct
     if guess < secret:
+        count =+ 1
         return too_low
     if guess > secret:
-        return too_high
+        count =+ 1
+        return too_high, count
 
 
 def main():
@@ -49,6 +52,8 @@ def main():
             break
 
     print('Thanks for playing the game!')
+    #print(f'Thanks for playing the game! Counter Result was {count} tries')
+
 
 
 if __name__ == '__main__':
